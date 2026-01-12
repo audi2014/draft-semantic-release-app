@@ -3,20 +3,18 @@
   "extends": ["config:base"],
   "dependencyDashboard": true,
   "dependencyDashboardAutoclose": false,
+  "rangeStrategy": "pin",
   "packageRules": [
     {
       "description": "Beta branch: always use latest beta, pinned version, automerge",
       "matchPackageNames": ["@audi2014/npmjs-test"],
       "matchBaseBranches": ["beta"],
-      "matchUpdateTypes": ["minor", "patch", "prerelease"],
       "enabled": true,
-      "rangeStrategy": "pin",
-      "separateMinorPatch": false,
       "automerge": true,
       "automergeType": "branch",
       "automergeStrategy": "merge",
       "schedule": ["at any time"],
-      "stabilityDays": 0,
+      "minimumReleaseAge": "0 seconds",
       "prCreation": "immediate"
     },
     {
@@ -24,14 +22,8 @@
       "matchPackageNames": ["@audi2014/npmjs-test"],
       "matchBaseBranches": ["master"],
       "ignoreUnstable": true,
-      "rangeStrategy": "pin",
       "automerge": false,
       "prCreation": "not-pending"
-    },
-    {
-      "description": "All other dependencies: pin versions",
-      "matchPackagePatterns": ["*"],
-      "rangeStrategy": "pin"
     }
   ]
 }
