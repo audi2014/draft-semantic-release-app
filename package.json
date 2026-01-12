@@ -1,0 +1,23 @@
+{
+  "name": "draft-semantic-release-app",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://audi2014@github.com/audi2014/draft-semantic-release-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/audi2014/draft-semantic-release-app/issues"
+  },
+  "homepage": "https://github.com/audi2014/draft-semantic-release-app#readme",
+  "dependencies": {
+    "@audi2014/npmjs-test": "^1.8.0"
+  }
+}
