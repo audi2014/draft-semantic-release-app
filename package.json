@@ -18,6 +18,6 @@
   },
   "homepage": "https://github.com/audi2014/draft-semantic-release-app#readme",
   "dependencies": {
-    "@audi2014/npmjs-test": "^1.8.0"
+    "@audi2014/npmjs-test": "1.8.0-beta.3"
   }
 }
