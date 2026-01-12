@@ -5,6 +5,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "postinstall": "node -v",
     "test": "node index.js"
   },
   "repository": {
