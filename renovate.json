@@ -12,23 +12,9 @@
   "baseBranchPatterns": ["master", "beta"],
   "packageRules": [
     {
-      "description": "Beta branch: always use latest beta, pinned version, automerge",
       "matchBaseBranches": ["beta"],
       "followTag": "beta",
-      "ignoreUnstable": false,
-      "respectLatest": false,
-      "dependencyDashboardApproval": false,
-
-      "recreateWhen": "always",
-      "automerge": true,
-      "platformAutomerge": true,
-      "automergeType": "pr",
-      "automergeStrategy": "merge",
-      "ignoreTests": true,
-      "matchPackageNames": ["@audi2014/npmjs-test"],
-      "schedule": ["at any time"],
-      "minimumReleaseAge": "0 seconds",
-      "prCreation": "immediate"
+      "matchPackageNames": ["@audi2014/npmjs-test"]
     },
     {
       "description": "Master branch: always use latest master, pinned version, automerge",
