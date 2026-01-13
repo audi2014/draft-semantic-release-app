@@ -1,12 +1,13 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:base"],
+  "extends": ["config:recommended"],
   "dependencyDashboard": true,
   "dependencyDashboardAutoclose": false,
   "rangeStrategy": "pin",
   "constraints": {
-    "node": "14"
+    "node": "22"
   },
+  "baseBranchPatterns": ["devel", "beta", "master"],
   "packageRules": [
     {
       "description": "Beta branch: always use latest beta, pinned version, automerge",
