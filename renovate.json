@@ -17,6 +17,7 @@
       "followTag": "beta",
       "ignoreUnstable": false,
       "respectLatest": false,
+      "dependencyDashboardApproval": false,
 
       "recreateWhen": "always",
       "automerge": true,
