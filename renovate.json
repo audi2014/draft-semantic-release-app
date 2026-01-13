@@ -9,17 +9,31 @@
   },
   "prConcurrentLimit": 0,
   "prHourlyLimit": 0,
-  "baseBranchPatterns": ["master"],
+  "baseBranchPatterns": ["master", "beta"],
   "packageRules": [
     {
-      "description": "Master branch: always use latest master, pinned version, automerge",
-      "matchBaseBranches": ["master"],
+      "description": "Beta branch: always use latest beta, pinned version, automerge",
+      "matchBaseBranches": ["beta"],
+
       "automerge": true,
       "platformAutomerge": true,
       "automergeType": "pr",
       "automergeStrategy": "merge",
       "ignoreTests": true,
+      "matchPackageNames": ["@audi2014/npmjs-test"],
+      "schedule": ["at any time"],
+      "minimumReleaseAge": "0 seconds",
+      "prCreation": "immediate"
+    },
+    {
+      "description": "Master branch: always use latest master, pinned version, automerge",
+      "matchBaseBranches": ["master"],
 
+      "automerge": true,
+      "platformAutomerge": true,
+      "automergeType": "pr",
+      "automergeStrategy": "merge",
+      "ignoreTests": true,
       "matchPackageNames": ["@audi2014/npmjs-test"],
       "schedule": ["at any time"],
       "minimumReleaseAge": "0 seconds",
