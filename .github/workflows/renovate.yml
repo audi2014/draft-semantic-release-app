@@ -6,7 +6,8 @@ on:
       logLevel:
         description: 'Log level'
         required: false
-        default: 'debug'
+# ["trace", "debug", "info", "warn", "error", "fatal"]
+        default: 'warn'
   repository_dispatch:
     types: [renovate-trigger]
   schedule:

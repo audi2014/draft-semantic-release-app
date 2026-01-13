@@ -7,11 +7,6 @@
   "constraints": {
     "node": "14"
   },
-  "postUpgradeTasks": {
-    "commands": ["npm install --package-lock-only"],
-    "fileFilters": ["package-lock.json"],
-    "executionMode": "update"
-  },
   "packageRules": [
     {
       "description": "Beta branch: always use latest beta, pinned version, automerge",
