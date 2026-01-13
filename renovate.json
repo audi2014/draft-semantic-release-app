@@ -18,6 +18,7 @@
       "platformAutomerge": true,
       "automergeType": "pr",
       "automergeStrategy": "merge",
+      "ignoreTests": true,
 
       "matchPackageNames": ["@audi2014/npmjs-test"],
       "schedule": ["at any time"],
