@@ -12,9 +12,13 @@
   "baseBranchPatterns": ["master", "beta"],
   "packageRules": [
     {
+      "description": "Beta branch: immediate PRs for beta tags",
       "matchBaseBranches": ["beta"],
+      "matchPackageNames": ["@audi2014/npmjs-test"],
       "followTag": "beta",
-      "matchPackageNames": ["@audi2014/npmjs-test"]
+      "prCreation": "immediate",
+      "schedule": ["at any time"],
+      "recreateWhen": "always"
     },
     {
       "description": "Master branch: always use latest master, pinned version, automerge",
