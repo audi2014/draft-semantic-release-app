@@ -7,7 +7,7 @@
   "constraints": {
     "node": "22"
   },
-  "baseBranchPatterns": ["devel", "beta", "master"],
+  "baseBranchPatterns": ["beta", "master"],
   "packageRules": [
     {
       "description": "Beta branch: always use latest beta, pinned version, automerge",
