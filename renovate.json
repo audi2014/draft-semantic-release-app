@@ -17,6 +17,7 @@
       "ignoreUnstable": false,
       "respectLatest": false,
 
+      "recreateWhen": "always",
       "automerge": true,
       "platformAutomerge": true,
       "automergeType": "pr",
@@ -31,6 +32,7 @@
       "description": "Master branch: always use latest master, pinned version, automerge",
       "matchBaseBranches": ["master"],
 
+      "recreateWhen": "always",
       "automerge": true,
       "platformAutomerge": true,
       "automergeType": "pr",
