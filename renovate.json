@@ -14,7 +14,7 @@
       "matchBaseBranches": ["master"],
       "automerge": true,
       "platformAutomerge": true,
-      "automergeType": "branch",
+      "automergeType": "pr",
       "automergeStrategy": "merge",
 
       "matchPackageNames": ["@audi2014/npmjs-test"],
