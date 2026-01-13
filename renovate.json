@@ -22,10 +22,11 @@
       "prCreation": "immediate"
     },
     {
-      "description": "Master branch: only stable releases, pinned version, manual merge",
+      "description": "Master branch: always use latest beta, pinned version, automerge",
       "matchBaseBranches": ["master"],
-      "automerge": false,
-      "ignoreUnstable": true,
+      "automerge": true,
+      "automergeType": "branch",
+      "automergeStrategy": "merge",
 
       "matchPackageNames": ["@audi2014/npmjs-test"],
       "schedule": ["at any time"],
