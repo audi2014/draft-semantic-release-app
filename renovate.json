@@ -25,7 +25,8 @@
       "description": "Master branch: always use latest beta, pinned version, automerge",
       "matchBaseBranches": ["master"],
       "automerge": true,
-      "automergeType": "branch",
+      "platformAutomerge": true,
+      "automergeType": "pr",
       "automergeStrategy": "merge",
 
       "matchPackageNames": ["@audi2014/npmjs-test"],
