@@ -14,6 +14,7 @@
     {
       "description": "Beta branch: always use latest beta, pinned version, automerge",
       "matchBaseBranches": ["beta"],
+      "followTag": "beta",
       "ignoreUnstable": false,
       "respectLatest": false,
 
