@@ -5,6 +5,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "validate": "npx --yes --package renovate -- renovate-config-validator",
+    "postinstall": "node -v",
     "test": "node index.js"
   },
   "repository": {

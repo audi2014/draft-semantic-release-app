@@ -1,29 +1,36 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:base"],
+  "extends": ["config:recommended"],
   "dependencyDashboard": true,
   "dependencyDashboardAutoclose": false,
   "rangeStrategy": "pin",
+  "constraints": {
+    "node": "22"
+  },
+  "baseBranchPatterns": ["beta", "master"],
   "packageRules": [
     {
       "description": "Beta branch: always use latest beta, pinned version, automerge",
-      "matchPackageNames": ["@audi2014/npmjs-test"],
       "matchBaseBranches": ["beta"],
-      "enabled": true,
       "automerge": true,
       "automergeType": "branch",
       "automergeStrategy": "merge",
+
+      "matchPackageNames": ["@audi2014/npmjs-test"],
       "schedule": ["at any time"],
       "minimumReleaseAge": "0 seconds",
       "prCreation": "immediate"
     },
     {
       "description": "Master branch: only stable releases, pinned version, manual merge",
-      "matchPackageNames": ["@audi2014/npmjs-test"],
       "matchBaseBranches": ["master"],
-      "ignoreUnstable": true,
       "automerge": false,
-      "prCreation": "not-pending"
+      "ignoreUnstable": true,
+
+      "matchPackageNames": ["@audi2014/npmjs-test"],
+      "schedule": ["at any time"],
+      "minimumReleaseAge": "0 seconds",
+      "prCreation": "immediate"
     }
   ]
 }
