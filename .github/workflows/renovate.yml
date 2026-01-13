@@ -27,6 +27,6 @@ jobs:
           configurationFile: renovate.json
           token: ${{ secrets.RENOVATE_TOKEN }}
         env:
-          LOG_LEVEL: ${{ github.event.inputs.logLevel || 'debug' }}
+          LOG_LEVEL: ${{ github.event.inputs.logLevel || 'warn' }}
           RENOVATE_REPOSITORIES: ${{ github.repository }}
           RENOVATE_BASE_BRANCHES: ${{ github.event.client_payload.branch || github.ref_name }}

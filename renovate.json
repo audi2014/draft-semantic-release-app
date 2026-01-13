@@ -7,26 +7,14 @@
   "constraints": {
     "node": "22"
   },
-  "baseBranchPatterns": ["beta", "master"],
+  "baseBranchPatterns": ["master"],
   "packageRules": [
     {
-      "description": "Beta branch: always use latest beta, pinned version, automerge",
-      "matchBaseBranches": ["beta"],
-      "automerge": true,
-      "automergeType": "branch",
-      "automergeStrategy": "merge",
-
-      "matchPackageNames": ["@audi2014/npmjs-test"],
-      "schedule": ["at any time"],
-      "minimumReleaseAge": "0 seconds",
-      "prCreation": "immediate"
-    },
-    {
-      "description": "Master branch: always use latest beta, pinned version, automerge",
+      "description": "Master branch: always use latest master, pinned version, automerge",
       "matchBaseBranches": ["master"],
       "automerge": true,
       "platformAutomerge": true,
-      "automergeType": "pr",
+      "automergeType": "branch",
       "automergeStrategy": "merge",
 
       "matchPackageNames": ["@audi2014/npmjs-test"],
