@@ -29,4 +29,4 @@ jobs:
         env:
           LOG_LEVEL: ${{ github.event.inputs.logLevel || 'debug' }}
           RENOVATE_REPOSITORIES: ${{ github.repository }}
-          RENOVATE_BASE_BRANCHES: ${{ github.event.client_payload.branch || github.ref_name }}
+          RENOVATE_PACKAGE_RULES: ${{ github.event.client_payload.allowedVersions && format('[{{"matchPackageNames":["@audi2014/npmjs-test"],"allowedVersions":"{0}"}}]', github.event.client_payload.allowedVersions) || '[]' }}

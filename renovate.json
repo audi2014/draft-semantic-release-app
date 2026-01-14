@@ -9,31 +9,32 @@
   },
   "prConcurrentLimit": 0,
   "prHourlyLimit": 0,
-  "baseBranchPatterns": ["master", "beta"],
   "packageRules": [
     {
-      "description": "Beta branch: immediate PRs for beta tags",
-      "matchBaseBranches": ["beta"],
+      "description": "Hotfix branches: instant merge without waiting for checks",
+      "matchBaseBranches": ["/^hotfix/", "/^hot-fix/"],
       "matchPackageNames": ["@audi2014/npmjs-test"],
-      "followTag": "beta",
       "prCreation": "immediate",
       "schedule": ["at any time"],
-      "recreateWhen": "always"
-    },
-    {
-      "description": "Master branch: always use latest master, pinned version, automerge",
-      "matchBaseBranches": ["master"],
-
       "recreateWhen": "always",
       "automerge": true,
-      "platformAutomerge": true,
+      "platformAutomerge": false,
       "automergeType": "pr",
-      "automergeStrategy": "merge",
       "ignoreTests": true,
+      "rangeStrategy": "pin"
+    },
+    {
+      "description": "Betafix branches: instant merge without waiting for checks",
+      "matchBaseBranches": ["/^betafix/", "/^beta-fix/"],
       "matchPackageNames": ["@audi2014/npmjs-test"],
+      "prCreation": "immediate",
       "schedule": ["at any time"],
-      "minimumReleaseAge": "0 seconds",
-      "prCreation": "immediate"
+      "recreateWhen": "always",
+      "automerge": true,
+      "platformAutomerge": false,
+      "automergeType": "pr",
+      "ignoreTests": true,
+      "rangeStrategy": "pin"
     }
   ]
 }
