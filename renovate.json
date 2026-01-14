@@ -5,36 +5,39 @@
   "dependencyDashboardAutoclose": false,
   "rangeStrategy": "pin",
   "constraints": {
-    "node": "22"
+    "node": "14"
   },
   "prConcurrentLimit": 0,
   "prHourlyLimit": 0,
+  "baseBranchPatterns": [
+    "devel",
+    "{hotfix,hot-fix}{/**,-*}",
+    "{betafix,beta-fix}{/**,-*}"
+  ],
   "packageRules": [
     {
-      "description": "Hotfix branches: instant merge without waiting for checks",
-      "matchBaseBranches": ["/^hotfix/", "/^hot-fix/"],
+      "description": "Devel branch: instant PR creation for @audi2014/npmjs-test",
+      "matchBaseBranches": ["devel"],
       "matchPackageNames": ["@audi2014/npmjs-test"],
       "prCreation": "immediate",
       "schedule": ["at any time"],
-      "recreateWhen": "always",
-      "automerge": true,
-      "platformAutomerge": false,
-      "automergeType": "pr",
-      "ignoreTests": true,
-      "rangeStrategy": "pin"
+      "recreateWhen": "always"
     },
     {
-      "description": "Betafix branches: instant merge without waiting for checks",
-      "matchBaseBranches": ["/^betafix/", "/^beta-fix/"],
+      "description": "Hotfix branches: allow hotfix prerelease versions of hive-common",
+      "matchBaseBranches": ["{hotfix,hot-fix}{/**,-*}"],
       "matchPackageNames": ["@audi2014/npmjs-test"],
+      "allowedVersions": "/.+-hotfix\\..+/",
       "prCreation": "immediate",
-      "schedule": ["at any time"],
-      "recreateWhen": "always",
-      "automerge": true,
-      "platformAutomerge": false,
-      "automergeType": "pr",
-      "ignoreTests": true,
-      "rangeStrategy": "pin"
+      "schedule": ["at any time"]
+    },
+    {
+      "description": "Betafix branches: allow betafix prerelease versions of hive-common",
+      "matchBaseBranches": ["{betafix,beta-fix}{/**,-*}"],
+      "matchPackageNames": ["@audi2014/npmjs-test"],
+      "allowedVersions": "/.+-betafix\\..+/",
+      "prCreation": "immediate",
+      "schedule": ["at any time"]
     }
   ]
 }
